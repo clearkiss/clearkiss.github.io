@@ -121,12 +121,12 @@
 <meta property="og:site_name" content="mini编程">
 <meta property="og:description" content="一、数据在内存中的存储形式要想弄清楚什么是指针，必须先弄清楚数据在内存中式如何存储的，以及如何读取内存中的数据。当程序定义一个变量时，在对程序编译的时候，编译器会根据这个变量的内存为变量分配一定长度的内存空间。对int型分配4个字节，为double型分配8个字节等等。  在内存中每个字节都有对应的编号，这个编号就是地址。  相当于旅馆的房间号，数据就相当于房间里的的客人。 1.用一个例子来讲123">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/03/06/zhizhen/zhizhen/123.png">
-<meta property="og:updated_time" content="2019-03-03T02:52:17.306Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/zhizhen/123.png">
+<meta property="og:updated_time" content="2019-03-06T13:09:50.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c语言指针">
 <meta name="twitter:description" content="一、数据在内存中的存储形式要想弄清楚什么是指针，必须先弄清楚数据在内存中式如何存储的，以及如何读取内存中的数据。当程序定义一个变量时，在对程序编译的时候，编译器会根据这个变量的内存为变量分配一定长度的内存空间。对int型分配4个字节，为double型分配8个字节等等。  在内存中每个字节都有对应的编号，这个编号就是地址。  相当于旅馆的房间号，数据就相当于房间里的的客人。 1.用一个例子来讲123">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/06/zhizhen/zhizhen/123.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/06/zhizhen/123.png">
 
 
 
@@ -488,24 +488,12 @@
                 
               
 
-              <time title="创建时间：2019-03-06 14:13:27" itemprop="dateCreated datePublished" datetime="2019-03-06T14:13:27+08:00">2019-03-06</time>
+              <time title="创建时间：2019-03-06 14:13:27 / 修改时间：21:09:50" itemprop="dateCreated datePublished" datetime="2019-03-06T14:13:27+08:00">2019-03-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-03 10:52:17" itemprop="dateModified" datetime="2019-03-03T10:52:17+08:00">2019-03-03</time>
               
             
           </span>
@@ -579,7 +567,7 @@
       
         <h1 id="一、数据在内存中的存储形式"><a href="#一、数据在内存中的存储形式" class="headerlink" title="一、数据在内存中的存储形式"></a>一、数据在内存中的存储形式</h1><p>要想弄清楚什么是指针，必须先弄清楚数据在内存中式如何存储的，以及如何读取内存中的数据。当程序定义一个变量时，在对程序编译的时候，编译器会根据这个变量的内存为变量分配一定长度的内存空间。对int型分配4个字节，为double型分配8个字节等等。 <strong> 在内存中每个字节都有对应的编号，这个编号就是地址。 </strong> 相当于旅馆的房间号，数据就相当于房间里的的客人。</p>
 <h2 id="1-用一个例子来讲"><a href="#1-用一个例子来讲" class="headerlink" title="1.用一个例子来讲"></a>1.用一个例子来讲</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int i,j,k;</span><br><span class="line">	scanf(&quot;%d,%d&quot;,&amp;i,&amp;j);</span><br><span class="line">	k=i+j;</span><br><span class="line">	printf(&quot;%d&quot;,k);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序里定义了 i，j，k 三个变量，在编译程序的时候程序为 i，j，k分别分配四个字节长度的空间。假设系统将地址1000~1003分配给i，将1004~1007分配给j，将1008~1011分配给k，<br><img src="zhizhen/123.png" alt="内存地址分配简图"></p>
+<p>程序里定义了 i，j，k 三个变量，在编译程序的时候程序为 i，j，k分别分配四个字节长度的空间。假设系统将地址1000~1003分配给i，将1004~1007分配给j，将1008~1011分配给k，<br><img src="/2019/03/06/zhizhen/123.png" alt="内存地址分配简图"></p>
 
       
     </div>
