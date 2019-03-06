@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[markdown 基本语法]]></title>
+    <url>%2F2019%2F03%2F06%2Fmarkdown%2F</url>
+    <content type="text"><![CDATA[会飞的猪1.标题1234567# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题几级标题就是几个#号 2.字体效果1234**加粗***斜体*`***斜体加粗***~~删除线~~ 3.图片1234![alt](地址 &apos;&apos;title&apos;&apos;)alt就是显示在图片下面的文字。title是图片的标题，当鼠标移到图片上时显示的内容。 效果如下: 4.链接1[链接名](地址 &quot;title&quot;) 效果如下:百度一下]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[c语言指针]]></title>
+    <url>%2F2019%2F03%2F06%2Fzhizhen%2F</url>
+    <content type="text"><![CDATA[一、数据在内存中的存储形式要想弄清楚什么是指针，必须先弄清楚数据在内存中式如何存储的，以及如何读取内存中的数据。当程序定义一个变量时，在对程序编译的时候，编译器会根据这个变量的内存为变量分配一定长度的内存空间。对int型分配4个字节，为double型分配8个字节等等。 在内存中每个字节都有对应的编号，这个编号就是地址。 相当于旅馆的房间号，数据就相当于房间里的的客人。 1.用一个例子来讲12345678#include &lt;stdio.h&gt;int main()&#123; int i,j,k; scanf(&quot;%d,%d&quot;,&amp;i,&amp;j); k=i+j; printf(&quot;%d&quot;,k); return 0;&#125; 程序里定义了 i，j，k 三个变量，在编译程序的时候程序为 i，j，k分别分配四个字节长度的空间。假设系统将地址1000~1003分配给i，将1004~1007分配给j，将1008~1011分配给k，]]></content>
+      <categories>
+        <category>-c语言</category>
+      </categories>
+      <tags>
+        <tag>-c语言 -指针</tag>
+      </tags>
+  </entry>
+</search>

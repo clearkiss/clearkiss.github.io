@@ -78,6 +78,8 @@
   <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 
 
+  <link rel="manifest" href="/images/manifest.json">
+
 
 
 
@@ -1108,7 +1110,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
