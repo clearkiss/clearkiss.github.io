@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[c语言指针]]></title>
-    <url>%2F2019%2F03%2F10%2Fzhizhen%2F</url>
-    <content type="text"><![CDATA[一、数据在内存中的存储形式要想弄清楚什么是指针，必须先弄清楚数据在内存中式如何存储的，以及如何读取内存中的数据。当程序定义一个变量时，在对程序编译的时候，编译器会根据这个变量的内存为变量分配一定长度的内存空间。对int型分配4个字节，为double型分配8个字节等等。 在内存中每个字节都有对应的编号，这个编号就是地址。 相当于旅馆的房间号，数据就相当于房间里的的客人。 1.用一个例子来讲12345678#include &lt;stdio.h&gt;int main()&#123; int i,j,k; scanf(&quot;%d,%d&quot;,&amp;i,&amp;j); k=i+j; printf(&quot;%d&quot;,k); return 0;&#125; int i,j,k;程序里定义了 i，j，k 三个变量， 在编译程序的时候程序为 i，j，k分别分配四个字节长度的空间。假设系统将地址1000~1003分配给i，将1004~1007分配给j，将1008~1011分配给k，如下图所示。scanf(&quot;%d,%d&quot;,&amp;i,&amp;j);系统执行这句代码的时候，将从键盘获取的第一个整型数值放到首地址为1000的整形变量单元中，同理，键盘获取的第二个数值放到首地址为1004的单元中。 k=i+j;系统执行这句代码的时候，首先通过变量i找到变量的i的存储单元首地址1000，再从首地址为1000的存储单元中将i的值取出来，j同理。然后，将取出来的i j对应两个值相加。最后，将得到的结果存储到首地址为1008的整形变量存储单元中。简单来讲就是 取值 –&gt; 相加 –&gt; 存值 printf(&quot;%d&quot;,k);系统执行这句代码的时候，现由变量的名称 k 找到变量的首地址，再由首地将该整形变量内存单元中的值取出来，并且在控制台输出。 2.两种访问方式2.1 直接访问即通过变量名，找到存储该变量单元的首地址，取出其中的值。 2.2 间接访问将变量的地址存到另一个变量中，通过访问另一个变量得到该变量的地址，再进行访问该变量。例如：123456789#include &lt;stdio.h&gt;int main()&#123; int a=5; int b=&amp;a; //&amp;符号在后面会讲到 printf(&quot;%d%d%d&quot;,a,b,*b); // *在后面会讲到 return 0；&#125; 2.3两个重要符号&amp;和*&amp; ：取地址运算符1234567#include &lt;stdio.h&gt;int main()&#123; int a=5; printf(&quot;%d%d&quot;,a,&amp;a); //&amp;a得到的结果是变量a对应存储单元的首地址。 return 0;&#125; *：指针运算符12345678#include &lt;stdio.h&gt;int main()&#123; int a=5,*pointer; pointer = &amp;a; printf(&quot;%d%d&quot;,pointer,*pointer); //*pointer 得到的结果是该指针变量所指向的变量（a）的值。 return 0;&#125; 二、指针与指正变量1.指针定义： 一个变量的地址称为这个变量的指针。说明指针 = 地址 2.指针变量定义： 如果一个变量专门用来存储另一个变量的地址（指针），则称它为指正变量。首先指针变量是一个变量，这个变量里面存储的数据是一个指针（地址）。指针 不是变量 是一个地址。 2.1指针变量的定义类型名 指着变量名例如：`int pointer ; float poniter1; **类型名：**用来定义指针变量的基类型。 **基类型：**用来指针变量可以指向的变量类型。`：用来表示该变量是指针变量。变量名：变量的名字。 2.2指针变量的初始化同普通变量一样指针变量的初始化方法有两种：1、变量定义的时候初始化例如:12int a;int * pointer = &amp;a; 2、变量定义完成后再定义1234int a,*pointer;pointer = &amp;a;//注意这里是pointer 而不是 *pointer//应为变量名是pointer而不是 *pointer 2.3指针变量的引用1.给指针变量赋值pointer = &amp;a;2.输出指针变量指向的值pritnf(&quot;%d&quot;,8pointer);]]></content>
+    <title><![CDATA[CSS]]></title>
+    <url>%2F2019%2F05%2F12%2Fcss%2F</url>
+    <content type="text"><![CDATA[css - Cascading Style Sheet - 层叠样式表使用 div+css对页面进行布局 div - division - 区块 利用div将HTML页面划分为不同的区块 css语法12345678p&#123; color: red; background : blue; &#125; 选择器&#123; 样式：值； 样式：值； &#125; css引入方式（4种） 内联样式写到html语句内 12&lt;p style=&quot;color: red;&quot;&gt;&lt;/p&gt;&lt;!--在html语句内写入css样式--&gt; 内部样式 12345678&lt;!-- 内部样式--&gt;&lt;!-- 在head标签里面 添加style标签 style标签内部写入css样式--&gt;&lt;style&gt; p&#123; color: red; font-size: 12px; &#125;&lt;/style&gt; 外部样式 12&lt;!-- 在外部创建css文件 然后使用link标签内映入css样式--&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/mycss.css&quot; type=&quot;text/css&quot;&gt; import导入其他css外部样式在一个css样式内引入另一个css文件。 1@import url(&apos;index.css&apos;) css选择器（7种） 选择器 格式 内容范围 id选择器 #idname 选择页面内指定id的元素，id是唯一的 类选择器 .classname 选择页面内指定class的元素，class可以不唯一 标签选择器 html标签名 选择页面内所有指定标签进行样式修改 交叉选择器 html标签.classanme 为了更加精确进行选择，标签选择器和类选择器复合使用 群组选择器 选择多个元素用逗号 ,隔开 同时选择多个元素进行修改，可以是 id 类 标签 交叉 选择器的组合 后代选择器 父级 空格 子级 选择某一父级下面的子级元素 通用选择器 * 选择页面中的素有元素 伪类选择器 选择器 描述 :link 未访问链接 :active 选定的链接 :hover 鼠标一定到链接上 :visited 已访问的链接 :first-letter 选择段落中的第一字母或中文字符 :first-line 选择文本中的首行 css 继承性 叠加性继承性 - 后代元素会继承前辈元素的一些属性和样式。叠加性 - 统一元素被多个样式叠加指定。 优先级根据各种选择器选择的精度不同，当多条样式规则对其进行操作的时候也就是样式重叠的时候，那一条样式规则会起作用呢？这个就是优先级的作用。一般来说选择器的精度越高优先级就会越高。！优先级总览其中！importtant 用于指定某一条规则为最高优先级，一般很少使用。]]></content>
       <categories>
-        <category>c语言</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>c语言</tag>
-        <tag>指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[markdown 基本语法]]></title>
-    <url>%2F2019%2F03%2F10%2Fmarkdown%2F</url>
-    <content type="text"><![CDATA[会飞的猪1.标题1234567# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题几级标题就是几个#号 2.字体效果1234**加粗***斜体*`***斜体加粗***~~删除线~~ 3.图片1234![alt](地址 &apos;&apos;title&apos;&apos;)alt就是显示在图片下面的文字。title是图片的标题，当鼠标移到图片上时显示的内容。 效果如下: 4.链接1[链接名](地址 &quot;title&quot;) 效果如下:百度一下]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[c语言指针（2）]]></title>
-    <url>%2F2019%2F03%2F06%2Fzhizhen2%2F</url>
-    <content type="text"><![CDATA[数组元素指针一个数组包含若干元素，每个元素在内存中都占用相应的地址，每个元素的地址就是数组元素的指针在C语言中数组名代表数组中首元素的地址。而不是代表整个数组。 1.1数组元素的两种引用方式1.下标法：通过数组下标引用数组元素。就是以a[0],a[1]的形式输出，[]实际上是变址运算符，2.指针法：通过元素指针找到数组的元素。*(数组名+i);i是数组的下标。以指针变量的形式输出。12345678#include &lt;stdio.h&gt;int main()&#123; int a[10] = &#123;0,1,12,3,4,5,6,7,8,9 &#125;; int *pointer = &amp;a[0]; printf(&quot;%d %d %d %d&quot;,*pointer,a[0],*(pointer+2),*(a+2)); //注意着里是*（pointer + 2）而不是*pointer+2 return 0;&#125; 运行结果如下图：这里需要注意的是如果以一个指针指向数组中的一个元素，则（pointer+1）指向的是数组的下一个元素，（poniter-1）指向的是数组的上一个元素。所以*(pointer+1)输出的结果是指针变量pointer所指向元素的下一个数组元素，比如说*pointer指向的是a[0]， *(pointer+1)指向是a[1], 同理 *(pointer+3)指向的是a[3]，接下来用一个例子说明。1234567891011#include &lt;stdio.h&gt;int main()&#123; int a[10] = &#123;0,1,12,23,5,89,2,77,14,56 &#125;; int *pointer = &amp;a[0]; for(int j=0;j&lt;10;j++)&#123; printf(&quot;%d\n&quot;,*pointer); //指针变量的输出前面必须加*符号 pointer++; &#125; return 0;&#125; 运行结果如下图： 1.2指针与二维数组12345678910#include &lt;stdio.h&gt; int main()&#123; int a[3][4]=&#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;; for(int i=0;i&lt;3;i++)&#123; for(int j=0;j&lt;4;j++)&#123; printf(&quot;%d \t&quot;,a[i][j]); &#125; printf(&quot;\n&quot;); &#125;&#125; 输出结果是这样的其中a[0]=1由此可以看出这个数组有三个行元素：a[0} ,a[1] ,a[2] 每一行的元素又是一个一维数组，每一个行元素包含四个元素。即a[0] = {1,23,4};a[1] = {5,6,7,8};a[2] = {9,10,11,12}在二维数组中，数组名a代表首行元素地址即首行元素的地址可以表示成这样三种情况a=a[0]=*(a+0)再进一步分析，由于在二维数组中每一个行元素都是一个一维数组。那么在序号为1的行元素中，a[0][1] 的地址可以表示为这样a[0]+1=a+1=*(a+0)+1=&amp;a[0][1]注意以上的a a[0] *(a+0) a[0]+1 a+1 *(a+0)+1 &amp;a[0][1] 都是地址（指针）由此看来,a[i][j]的地址可以表示成这样：a[i]+j = *(a+i)+j = &amp;a[i][j]还记得符号*的含义吗？将后面地址中的值取出来。所以a[i][j]的值可以表示成这样：a[i][j]=*(a[i]+j)=*(*(a+i)+j)这里有一个很有趣的点 就是 a+1 与 *(a+1) 是相等的，思考一下吧！]]></content>
-      <categories>
-        <category>c语言</category>
-      </categories>
-      <tags>
-        <tag>c语言</tag>
-        <tag>指针</tag>
+        <tag>css</tag>
+        <tag>html</tag>
       </tags>
   </entry>
 </search>
